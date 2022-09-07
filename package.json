@@ -7,13 +7,13 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha"
+    "test": "node_modules/mocha/bin/_mocha"
   },
   "author": "Rachel Evans",
   "license": "tbc",
   "devDependencies": {
     "jshint": "^2.8.0",
-    "mocha": "^2.2.5",
+    "mocha": "^10.0.0",
     "mocha-jshint": "0.0.9",
     "should": "^6.0.3",
     "sinon": "^1.14.1"
@@ -22,10 +22,10 @@
     "aws-sdk": "^2.42.0",
     "canonical-json": "^0.0.4",
     "commander": "^2.8.1",
-    "fast-csv": "^0.6",
+    "fast-csv": "^4.3.6",
     "fixed-size-executor": "^0.1",
     "https-proxy-agent": "^5.0.0",
-    "merge": "^1.2",
+    "merge": "^2.1.1",
     "mkdirp": "^0.5.1",
     "node-uuid": "^1.4.3",
     "q": "^1.4.1",

@@ -50,7 +50,8 @@ var getCredentialReportCsv = function (client) {
     return getCredentialReport(client)
         .then(function (v) {
             if (v.ReportFormat !== 'text/csv') throw new Error('getCredentialReport did not return text/csv');
-            var csv = new Buffer(v.Content, 'base64').toString();
+            // var csv = new Buffer(v.Content, 'base64').toString();
+            var csv = new Buffer.from(v.Content, 'base64').toString();
             if (csv !== "" && csv[csv.length-1] !== "\n") csv = csv + "\n";
             return csv;
         });
@@ -60,7 +61,7 @@ var parseCsv = function (csvString) {
     var d = Q.defer();
     process.nextTick(function () {
         var rows = [];
-        csv.fromString(csvString, {headers: true})
+        csv.parseString(csvString, {headers: true})
             .on("data", function (data) {
                 rows.push(data);
             })
